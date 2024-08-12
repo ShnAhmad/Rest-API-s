@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:rest_apis/Models/comments_model.dart';
@@ -42,7 +42,12 @@ class _CommentsScreenState extends State<CommentsScreen> {
               future: getCommentsApi(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
-                  return const Text('Loading');
+                  return Center(
+                    child: LoadingAnimationWidget.threeArchedCircle(
+                      color: const Color.fromARGB(255, 19, 18, 18),
+                      size: 200,
+                    ),
+                  );
                 } else {
                   return ListView.builder(
                       itemCount: commentsList.length,

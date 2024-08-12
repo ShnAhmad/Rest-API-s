@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:rest_apis/Models/custom_album_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class AlbumScreen extends StatefulWidget {
   const AlbumScreen({super.key});
@@ -45,18 +46,27 @@ class _AlbumScreenState extends State<AlbumScreen> {
                   return ListView.builder(
                       itemCount: albums.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          child: ListTile(
-                            // title:Text(albums[index].title)
-
-                            title: Text(snapshot.data![index].id.toString()),
-                            subtitle: Text(snapshot.data![index].title),
-                            leading: CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  snapshot.data![index].url.toString()),
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: LoadingAnimationWidget.inkDrop(
+                              color: const Color.fromARGB(255, 141, 29, 29),
+                              size: 200,
                             ),
-                          ),
-                        );
+                          );
+                        } else {
+                          return Card(
+                            child: ListTile(
+                              // title:Text(albums[index].title)
+
+                              title: Text(snapshot.data![index].id.toString()),
+                              subtitle: Text(snapshot.data![index].title),
+                              leading: CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                    snapshot.data![index].url.toString()),
+                              ),
+                            ),
+                          );
+                        }
                       });
                 }),
           )
