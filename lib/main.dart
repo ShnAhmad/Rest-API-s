@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rest_apis/home_screen.dart';
+import 'package:rest_apis/album_screen.dart';
+import 'package:rest_apis/comments_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Rest Apis',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const AlbumScreen(),
     );
   }
 }

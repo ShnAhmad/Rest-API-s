@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:rest_apis/Models/comments_model.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class CommentsScreen extends StatefulWidget {
+  const CommentsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<CommentsScreen> createState() => _CommentsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CommentsScreenState extends State<CommentsScreen> {
   List<CommentsModel> commentsList = [];
 
   Future<List<CommentsModel>> getCommentsApi() async {
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rest Apis'),
+        title: const Text('Comments'),
       ),
       body: Column(
         children: [
