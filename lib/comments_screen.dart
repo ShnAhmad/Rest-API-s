@@ -55,11 +55,14 @@ class _CommentsScreenState extends State<CommentsScreen> {
                       itemCount: commentsList.length,
                       itemBuilder: (context, index) {
                         return Card(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Email\n${commentsList[index].email}'),
-                          ],
+                            child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Email\n${commentsList[index].email}'),
+                            ],
+                          ),
                         ));
                       });
                 }
