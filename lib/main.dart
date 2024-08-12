@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rest_apis/album_screen.dart';
-import 'package:rest_apis/comments_screen.dart';
-import 'package:rest_apis/user_screen.dart';
+import 'package:rest_apis/Screens/album_screen.dart';
+import 'package:rest_apis/Screens/comments_screen.dart';
+import 'package:rest_apis/Screens/user_screen.dart';
 
 void main() {
   runApp(const MyApp());

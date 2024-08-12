@@ -20,7 +20,7 @@ class _UserScreenState extends State<UserScreen> {
     var data = jsonDecode(response.body.toString());
     if (response.statusCode == 200) {
       for (Map<String, dynamic> i in data) {
-        print(i);
+        // print(i);
         users.add(UserModel.fromJson(i));
       }
       return users;
