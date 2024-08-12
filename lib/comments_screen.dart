@@ -50,6 +50,8 @@ class _CommentsScreenState extends State<CommentsScreen> {
                   );
                 } else {
                   return ListView.builder(
+                      //! we can also use snapshot length because the whole data is one list
+                      // itemCount: snapshot.data!.length,
                       itemCount: commentsList.length,
                       itemBuilder: (context, index) {
                         return Card(

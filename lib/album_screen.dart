@@ -44,6 +44,8 @@ class _AlbumScreenState extends State<AlbumScreen> {
                 builder:
                     (context, AsyncSnapshot<List<CustomAlbumModel>> snapshot) {
                   return ListView.builder(
+                      //! we can also use snapshot length because the whole data is one list
+                      // itemCount: snapshot.data!.length,
                       itemCount: albums.length,
                       itemBuilder: (context, index) {
                         if (!snapshot.hasData) {
