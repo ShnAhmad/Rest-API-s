@@ -48,8 +48,8 @@ class _AlbumScreenState extends State<AlbumScreen> {
                       itemBuilder: (context, index) {
                         if (!snapshot.hasData) {
                           return Center(
-                            child: LoadingAnimationWidget.inkDrop(
-                              color: const Color.fromARGB(255, 141, 29, 29),
+                            child: LoadingAnimationWidget.threeArchedCircle(
+                              color: const Color.fromARGB(255, 16, 16, 16),
                               size: 200,
                             ),
                           );
