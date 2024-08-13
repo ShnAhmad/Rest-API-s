@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rest_apis/Screens/album_screen.dart';
 import 'package:rest_apis/Screens/comments_screen.dart';
 import 'package:rest_apis/Screens/user_screen.dart';
+import 'package:rest_apis/Screens/user_without_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const CommentsScreen(),
+      home: const UserWithoutModel(),
     );
   }
 }

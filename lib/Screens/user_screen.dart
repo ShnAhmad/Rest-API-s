@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:rest_apis/components/reuseable_row.dart';
 import 'package:flutter/material.dart';
 import 'package:rest_apis/Models/user_model.dart';
 import 'package:http/http.dart' as http;
@@ -87,31 +87,6 @@ class _UserScreenState extends State<UserScreen> {
           ),
         ],
       ),
-    );
-  }
-}
-
-// ignore: must_be_immutable
-class ReusableRow extends StatelessWidget {
-  String title, value;
-  ReusableRow({super.key, required this.title, required this.value});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-        ),
-        Text(
-          value,
-          style: const TextStyle(
-            fontSize: 15,
-          ),
-        )
-      ],
     );
   }
 }
