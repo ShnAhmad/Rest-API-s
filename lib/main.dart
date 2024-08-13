@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rest_apis/Screens/album_screen.dart';
 import 'package:rest_apis/Screens/comments_screen.dart';
+import 'package:rest_apis/Screens/product_screen.dart';
 import 'package:rest_apis/Screens/user_screen.dart';
 import 'package:rest_apis/Screens/user_without_model.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const UserWithoutModel(),
+      home: const ProductScreen(),
     );
   }
 }
