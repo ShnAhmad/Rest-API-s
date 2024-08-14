@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rest_apis/Screens/album_screen.dart';
-import 'package:rest_apis/Screens/comments_screen.dart';
-import 'package:rest_apis/Screens/product_screen.dart';
-import 'package:rest_apis/Screens/user_screen.dart';
-import 'package:rest_apis/Screens/user_without_model.dart';
+import 'package:rest_apis/GetApis/album_screen.dart';
+import 'package:rest_apis/GetApis/comments_screen.dart';
+import 'package:rest_apis/GetApis/product_screen.dart';
+import 'package:rest_apis/GetApis/user_screen.dart';
+import 'package:rest_apis/GetApis/user_without_model.dart';
 
 void main() {
   runApp(const MyApp());
