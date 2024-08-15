@@ -4,9 +4,6 @@ import 'package:rest_apis/GetApis/comments_screen.dart';
 import 'package:rest_apis/GetApis/product_screen.dart';
 import 'package:rest_apis/GetApis/user_screen.dart';
 import 'package:rest_apis/PostApis/login_screen.dart';
-import 'package:rest_apis/components/navigation_button.dart';
-
-import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -38,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
-                  children: [
+                  children: const [
                     GridButton(
                         text: 'Albums',
                         icon: Icons.album,
@@ -64,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
-                  children: [
+                  children: const [
                     GridButton(
                         text: 'Login',
                         icon: Icons.login,
@@ -104,11 +101,11 @@ class GridButton extends StatelessWidget {
   final Widget screen;
 
   const GridButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.icon,
     required this.screen,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -131,9 +128,10 @@ class GridButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(icon, size: 48, color: Colors.teal),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(text,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              style:
+                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         ],
       ),
     );
