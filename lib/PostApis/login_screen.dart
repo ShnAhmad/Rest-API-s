@@ -1,30 +1,33 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+//login:eve.holt@reqres.in
+//password: "cityslicka"
+class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   String? _email, _password;
 
-  void signUp() async {
+  void signIn() async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       try {
-        Response response = await post(
-            Uri.parse('https://reqres.in/api/register'),
+        Response response = await post(Uri.parse('https://reqres.in/api/login'),
             body: {'email': _email, 'password': _password});
         if (response.statusCode == 200) {
           var data = jsonDecode(response.body.toString());
           print(data['token']);
-          print('Register successfully');
+          print('Login successfully');
         } else {
           print("failed");
         }
@@ -37,11 +40,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'Registration',
+            'Login',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
@@ -78,8 +84,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: signUp,
-                  child: const Text('Register'),
+                  onPressed: signIn,
+                  child: const Text('Login'),
                 ),
               ],
             ),

@@ -4,7 +4,8 @@ import 'package:rest_apis/GetApis/comments_screen.dart';
 import 'package:rest_apis/GetApis/product_screen.dart';
 import 'package:rest_apis/GetApis/user_screen.dart';
 import 'package:rest_apis/GetApis/user_without_model.dart';
-import 'package:rest_apis/PostApis/register_screen.dart';
+import 'package:rest_apis/PostApis/login_screen.dart';
+import 'package:rest_apis/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RegisterScreen(),
+      home: HomeScreen(),
     );
   }
 }
